@@ -185,12 +185,13 @@ export default function FeaturedProducts() {
                         )}
                       </div>
 
-                      {/* Wishlist Button */}
                       <Button
                         size="icon"
                         variant="secondary"
                         className="absolute top-2 right-2 h-8 w-8 bg-white/90 backdrop-blur-sm hover:bg-white z-10"
-                        onClick={(e) => handleWishlistToggle(product.id, e)}
+                        onClick={(e) =>
+                          handleWishlistToggle(product.id, product.name, e)
+                        }
                       >
                         <Heart
                           className={`h-4 w-4 transition-colors ${
@@ -217,7 +218,6 @@ export default function FeaturedProducts() {
                         </Button>
                       </div>
 
-                      {/* Add to Cart Button - Appears on hover */}
                       <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 via-black/40 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                         <Button
                           className="w-full bg-white text-black hover:bg-white/90"
