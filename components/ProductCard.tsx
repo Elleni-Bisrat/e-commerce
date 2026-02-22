@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { Heart, ShoppingCart, Star, Eye } from 'lucide-react'
+import { Heart, ShoppingCart, Star, Eye,X } from 'lucide-react'
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"

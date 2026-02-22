@@ -44,7 +44,6 @@ export function ShopProvider({ children }: { children: React.ReactNode }) {
   const [wishlist, setWishlist] = useState<number[]>([])
   const [selectedCategory, setSelectedCategory] = useState('All')
 
-  // Load from localStorage on mount
   useEffect(() => {
     const savedCart = localStorage.getItem('cart')
     const savedWishlist = localStorage.getItem('wishlist')
@@ -53,7 +52,6 @@ export function ShopProvider({ children }: { children: React.ReactNode }) {
     if (savedWishlist) setWishlist(JSON.parse(savedWishlist))
   }, [])
 
-  // Save to localStorage whenever cart or wishlist changes
   useEffect(() => {
     localStorage.setItem('cart', JSON.stringify(cart))
   }, [cart])
@@ -104,7 +102,6 @@ export function ShopProvider({ children }: { children: React.ReactNode }) {
 
   const cartCount = cart.reduce((count, item) => count + (item.quantity || 1), 0)
 
-  // Wishlist functions
   const addToWishlist = (productId: number) => {
     setWishlist(prev => [...prev, productId])
   }
